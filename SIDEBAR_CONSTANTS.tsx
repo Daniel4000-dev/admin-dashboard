@@ -2,7 +2,7 @@ import { SideNavItem } from "./types/types";
 import {
   BsHouseDoor,
   BsKanban,
-  BsListUi,
+  BsListUl,
   BsEnvelope,
   BsGear,
   BsQuestionCircle,
@@ -27,7 +27,7 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
   {
     title: "Orders",
     path: "/orders",
-    icon: <BsListUi size={20} />,
+    icon: <BsListUl size={20} />,
   },
   {
     title: "Feedbacks",

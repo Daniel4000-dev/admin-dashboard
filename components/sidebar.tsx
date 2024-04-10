@@ -18,7 +18,7 @@ const Sidebar = ({toggleCollapse}: {toggleCollapse: boolean}) => {
             </h3>
             }
         </div>
-        <nav className='flex felx-col gap-2 transition duration-30'>
+        <nav className='flex flex-col gap-2 transition duration-30'>
             <div className='flex flex-col gap-2 px-4'>
                 {
                     SIDENAV_ITEMS.map((item,index) => {
