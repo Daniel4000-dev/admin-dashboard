@@ -1,4 +1,4 @@
-import { SideNavItem, SideNavItemGroup } from "./types/types";
+import { SideNavItemGroup } from "./types/types";
 import {
   BsHouseDoor,
   BsKanban,
