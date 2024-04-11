@@ -8,6 +8,5 @@ export type SideNavItem = {
 
 export type SideNavItemGroup = {
     title: string;
-    path: string;
     menuList: SideNavItem[];
 }

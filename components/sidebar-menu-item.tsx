@@ -41,7 +41,7 @@ const SideBarMenuItem = ({ item }:{ item: SideNavItem }) => {
                 </a>
                 {subMenuOpen && !toggleCollapse && <div className='bg-[#3a3f48] border-1-4'>
                     <div className='grid gap-y-2 px-10 py-3 leading-5'>
-                        {/* {
+                        {
                             item.subMenuItems.map((subItem, index) => {
                                 return (
                                     <Link key={index} href={subItem.path} className={`${navMenuDropdownItem} ${subItem.path===pathName? 'text-white':''}`} >
@@ -49,7 +49,7 @@ const SideBarMenuItem = ({ item }:{ item: SideNavItem }) => {
                                     </Link>
                                 )
                             })
-                        } */}
+                        }
                     </div>
                 </div>
                 }

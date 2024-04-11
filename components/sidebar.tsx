@@ -4,6 +4,7 @@ import React from "react";
 import SideBarMenuItem from "./sidebar-menu-item";
 import classNames from "classnames";
 import { useSideBarToggle } from "@/hooks/use-sidebar-toggle";
+import SideBarMenuGroup from "./sidebar-menu-group";
 
 const SideBar = () => {
   const { toggleCollapse } = useSideBarToggle();
@@ -34,11 +35,7 @@ const SideBar = () => {
         <div className="flex flex-col gap-2 px-4">
           {SIDENAV_ITEMS.map((item, index) => {
             return (
-              <SideBarMenuItem
-                key={index}
-                item={item}
-                toggleCollapse={toggleCollapse}
-              ></SideBarMenuItem>
+              <SideBarMenuGroup key={index} menuGroup={item} />
             );
           })}
         </div>
