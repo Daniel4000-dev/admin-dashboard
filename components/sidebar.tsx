@@ -5,10 +5,10 @@ import SideBarMenuItem from "./sidebar-menu-item";
 import classNames from "classnames";
 import { useSideBarToggle } from "@/hooks/use-sidebar-toggle";
 
-const Sidebar = () => {
+const SideBar = () => {
   const { toggleCollapse } = useSideBarToggle();
   const asideStyle = classNames(
-    "fixed bg-[#31353d] text-gray-500 z-50 h-full shadow-lg shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]",
+    "sidebar overflow-y-auto overflow-x-auto fixed light:bg-[#31353d] text-gray-500 z-50 h-full shadow-lg shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]",
     {
       ["sm:w-[5.4rem] sm:left-0 left-[100%]"]: toggleCollapse,
       ["w-[20rem]"]: !toggleCollapse,
@@ -16,7 +16,7 @@ const Sidebar = () => {
   );
   return (
     <aside className={asideStyle}>
-      <div className="flex relative items-center py-5 px-3.5">
+      <div className="sidebar-top flex relative items-center py-5 px-3.5">
         <Image
           alt=""
           src="/DZ_logos_white.png"
@@ -47,4 +47,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;
