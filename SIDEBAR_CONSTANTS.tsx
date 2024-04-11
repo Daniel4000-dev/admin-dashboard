@@ -1,4 +1,4 @@
-import { SideNavItem } from "./types/types";
+import { SideNavItem, SideNavItemGroup } from "./types/types";
 import {
   BsHouseDoor,
   BsKanban,
@@ -8,7 +8,12 @@ import {
   BsQuestionCircle,
 } from "react-icons/bs";
 
-export const SIDENAV_ITEMS: SideNavItem[] = [
+export const SIDENAV_ITEMS: SideNavItemGroup[] = [
+
+  {
+    title:"Dashboards",
+    menuList:[]
+  },
   {
     title: "Dashboard",
     path: "/",

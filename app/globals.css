@@ -26,6 +26,13 @@
   scrollbar-width: thin;
   scrollbar-color: #999999;
 }
+
 .sidebar::-webkit-scrollbar {
   background: transparent;
+  width: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  scrollbar-color: #999999;
+  border-radius: 10px;
 }
