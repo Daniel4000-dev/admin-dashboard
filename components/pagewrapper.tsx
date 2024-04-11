@@ -1,7 +1,10 @@
 import React, { ReactNode } from 'react';
 import classNames from 'classnames';
+import { useSideBarToggle } from '@/hooks/use-sidebar-toggle';
 
-const PageWrapper = ({children, toggleCollapse}: {children: ReactNode, toggleCollapse:boolean}) => {
+const PageWrapper = ({ children }: { children: ReactNode }) => {
+
+    const { toggleCollapse  } = useSideBarToggle();
     const pageStyle = classNames('bg-slate-50 flex-grow text-black p-2 mt-16 pl-[20rem]',
     {
         ["sm:pl-[20rem]"]:!toggleCollapse,
