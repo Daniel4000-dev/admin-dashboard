@@ -6,7 +6,7 @@ import React from 'react'
 import SideBarMenuItem from './sidebar-menu-item';
 
 const SideBarMenuGroup = ({ menuGroup }: { menuGroup: SideNavItemGroup }) => {
-    const {toggleCollapse } = useSideBarToggle();
+    const { toggleCollapse } = useSideBarToggle();
 
     const menuGroupTitleStyle= classNames('py-4 tracking-[.1rem] font-meduim uppercase text-sm text-[#A5A1AA]', 
     {})
