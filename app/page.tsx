@@ -128,7 +128,7 @@ export default function Home() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <RecentSales   />
+                    {/* <RecentSales   /> */}
                   </CardContent>
                 </Card>
       </div>
