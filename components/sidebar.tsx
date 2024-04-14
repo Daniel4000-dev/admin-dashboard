@@ -26,12 +26,12 @@ const SideBar = () => {
           height={35}
         ></Image>
         {!toggleCollapse && (
-          <h3 className="pl-2 font-bold text-2xl text-[#e6e9ee] min-w-max">
+          <h3 className="pl-2 font-bold text-2xl text-[#e6e9ee] min-w-max light:text-[#">
             DZ Dahsboard
           </h3>
         )}
       </div>
-      <nav className="flex flex-col gap-2 transition duration-30">
+      <nav className="flex flex-col gap-2 transition duration-30 ease-in-out">
         <div className="flex flex-col gap-2 px-4">
           {SIDENAV_ITEMS.map((item, index) => {
             return (

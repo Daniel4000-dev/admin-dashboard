@@ -11,7 +11,7 @@ const SideBarMenuItem = ({ item }:{ item: SideNavItem }) => {
     const {toggleCollapse} = useSideBarToggle();
     const linkStyle = 'flex items-center min-h-[40px] h-full text-[#6e768e] py-2 px-4 hover:text-white rounded-md transition duration-200';
     const ddLinkStyle = linkStyle;
-    const navMenuDropdownItem = 'text-[#6e768e py-2 px-4 hover:text-white transition duration-200';
+    const navMenuDropdownItem = 'text-[#6e768e] light:text-[#6e768e] py-2 px-4 light:hover:text-black hover:text-white transition duration-200';
 
     const inactiveLink = classNames("flex items-center imn-h-[40px] h-full text-[#6e768e] light");
     const activeLinkStyle= 'rounded-md text-white light:text-black light:bg-[#efefef] bg-[#3a3f48]';
