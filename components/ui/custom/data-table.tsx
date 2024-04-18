@@ -4,16 +4,13 @@ import * as React from "react"
 import {
   ColumnDef,
   ColumnFiltersState,
-  SortingState,
   VisibilityState,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
-  getSortedRowModel,
   useReactTable,
-} from "@tanstack/react-table"
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
+} from "@tanstack/react-table";
 import {
   Table,
   TableBody,
@@ -27,10 +24,87 @@ import { Input } from "@/components/ui/input"
 
 const data: Sales[] = [
   {
-    id: "m5gr84i9",
+    id: "0",
     product: "Laptop",
-    quantity: 2,
     amount: 55000,
+    quantity: 2,
+    status: "success",
+  },
+  {
+    id: "1",
+    product: "PlayStation",
+    amount: 95000,
+    quantity: 7,
+    status: "processing",
+  },
+  {
+    id: "2",
+    product: "Mobile",
+    amount: 25000,
+    quantity: 1,
+    status: "success",
+  },
+  {
+    id: "3",
+    product: "Gaming PC",
+    amount: 355000,
+    quantity: 6,
+    status: "success",
+  },
+  {
+    id: "4",
+    product: "Mac",
+    amount: 155000,
+    quantity: 3,
+    status: "failed",
+  },
+  {
+    id: "5",
+    product: "Mobile Samsung Galaxy S23",
+    amount: 75000,
+    quantity: 4,
+    status: "success",
+  },
+  {
+    id: "0",
+    product: "Laptop",
+    amount: 55000,
+    quantity: 2,
+    status: "success",
+  },
+  {
+    id: "1",
+    product: "PlayStation",
+    amount: 95000,
+    quantity: 7,
+    status: "processing",
+  },
+  {
+    id: "2",
+    product: "Mobile",
+    amount: 25000,
+    quantity: 1,
+    status: "success",
+  },
+  {
+    id: "3",
+    product: "Gaming PC",
+    amount: 355000,
+    quantity: 6,
+    status: "success",
+  },
+  {
+    id: "4",
+    product: "Mac",
+    amount: 155000,
+    quantity: 3,
+    status: "failed",
+  },
+  {
+    id: "5",
+    product: "Mobile Samsung Galaxy S23",
+    amount: 75000,
+    quantity: 4,
     status: "success",
   },
 
@@ -50,44 +124,37 @@ export const columns: ColumnDef<Sales>[] = [
    header: "Product"
   },
   {
-    accessorkey: "amount",
+    accessorKey: "amount",
     header: "Amount"
-  },
+   },
   {
     accessorKey: "quantity",
     header: "Quantity"
   },
   {
-    accessorKey: "product",
+    accessorKey: "status",
     header: "Status"
   }
 ]
 
-export function RecentSales() {
-  const [sorting, setSorting] = React.useState<SortingState>([])
+interface DataTableProps<TData, TValue> {
+    columns: ColumnDef<TData, TValue>[],
+    data: TData[]
+}
+export function DataTable<TData, TValue>({data, columns}:DataTableProps<TData, TValue>) {
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   )
-  const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({})
-  const [rowSelection, setRowSelection] = React.useState({})
 
   const table = useReactTable({
     data,
     columns,
-    onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
-    getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
-    onColumnVisibilityChange: setColumnVisibility,
-    onRowSelectionChange: setRowSelection,
     state: {
-      sorting,
       columnFilters,
-      columnVisibility,
-      rowSelection,
     },
   })
 
@@ -95,10 +162,10 @@ export function RecentSales() {
     <div className="w-full">
       <div className="flex items-center py-4">
         <Input
-          placeholder="Filter emails..."
-          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
+          placeholder="Filter product..."
+          value={(table.getColumn("product")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
+            table.getColumn("product")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
@@ -155,8 +222,8 @@ export function RecentSales() {
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
         <div className="flex-1 text-sm text-muted-foreground">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
+         Page {table.getSate().pagination.paeindex + 1} of{" "}
+          {table.getPageCount()}
         </div>
         <div className="space-x-2">
           <Button

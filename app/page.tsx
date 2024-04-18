@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import { Overview } from "./components/overview";
-import { RecentSales } from "./components/recent-table";
+import { RecentSales } from "./components/recent-sales";
 
 export default function Home() {
   return (
