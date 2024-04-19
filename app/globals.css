@@ -88,5 +88,5 @@
 
   .sidebar::-webkit-scrollbar-thumb {
     background: #999999;
-    border-radius: 10px;
+    border,-radius: 10px;
   }
