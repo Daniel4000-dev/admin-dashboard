@@ -2,6 +2,7 @@ import React from "react";
 import { BsList } from "react-icons/bs";
 import classNames from "classnames";
 import { useSideBarToggle } from "@/hooks/use-sidebar-toggle";
+import UserNav from "./userNav";
 
 const Header = () => {
   const { toggleCollapse, invokeToggleCollapse } = useSideBarToggle();
@@ -28,7 +29,7 @@ const Header = () => {
           <BsList></BsList>
         </button>
         <div className="order-1 sm:order-2 h-10 w-10 rounded-full bg-[#3a3f48] flex items-center justify-center text-center">
-          <span className="font-semibold text-sm">SR</span>
+          <UserNav />
         </div>
       </div>
     </header>

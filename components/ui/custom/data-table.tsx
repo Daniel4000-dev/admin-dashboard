@@ -149,6 +149,12 @@ export function DataTable<TData, TValue>({data, columns}:DataTableProps<TData, T
   const table = useReactTable({
     data,
     columns,
+    initialState: {
+        pagination: {
+            "pageIndex": 0,
+            "pageSize": 5,
+        }
+    },
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -222,7 +228,7 @@ export function DataTable<TData, TValue>({data, columns}:DataTableProps<TData, T
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
         <div className="flex-1 text-sm text-muted-foreground">
-         Page {table.getState().pagination.paeindex + 1} of{" "}
+         Page {table.getState().pagination.pageIndex + 1} of{" "}
           {table.getPageCount()}
         </div>
         <div className="space-x-2">
