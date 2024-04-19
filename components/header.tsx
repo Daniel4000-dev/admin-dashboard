@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   const headerStyle = classNames(
-    "fixed bg-[#31353d] w-full z-0 px-4 shadow-sm shadow-slate-500/40 pl-[20rem]",
+    "fixed bg-[#31353d] w-full z-[99999] px-4 shadow-sm shadow-slate-500/40 pl-[20rem]",
     {
       ["sm:pl-[20rem]"]: !toggleCollapse,
       ["sm:pl-[5.6rem]"]: toggleCollapse,

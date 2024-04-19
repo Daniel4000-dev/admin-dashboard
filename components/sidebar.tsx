@@ -9,7 +9,7 @@ import SideBarMenuGroup from "./sidebar-menu-group";
 const SideBar = () => {
   const { toggleCollapse } = useSideBarToggle();
   const asideStyle = classNames(
-    "sidebar overflow-y-auto overflow-x-auto fixed light:bg-[#fff] text-gray-500 z-50 h-full shadow-lg shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]",
+    "sidebar overflow-y-auto overflow-x-auto fixed light:bg-[#fff] text-gray-500 z-50 h-full shadow-lg shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem] z-[99999]",
     {
       ["sm:w-[5.4rem] sm:left-0 left-[100%]"]: toggleCollapse,
       ["w-[20rem]"]: !toggleCollapse,

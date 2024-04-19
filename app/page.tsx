@@ -6,8 +6,8 @@ import { RecentSales } from "./components/recent-sales";
 export default function Home() {
   return (
     <>
-      <h2>Dashboard</h2>
-      <div className="flex-1 space-y-4 p-8 pt-6">
+      <h2 className='text-3xl font-bold tracking-tight ml-0'>Dashboard</h2>
+      <div className="flex-1 space-y-4 p-8">
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
