@@ -2,6 +2,7 @@
 import Header from "@/components/header";
 import PageWrapper from "@/components/pagewrapper";
 import Sidebar from "@/components/sidebar";
+import { ThemeProvider } from "@/components/themeprovider";
 import { Karla } from "next/font/google";
 import "./globals.css";
 
@@ -19,11 +20,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={karla.className}>
-        <div className="flex min-h-screen">
-          <Sidebar></Sidebar>
-          <Header></Header>
-          <PageWrapper children={children}></PageWrapper>
-        </div>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="flex min-h-screen">
+            <Sidebar></Sidebar>
+            <Header></Header>
+            <PageWrapper children={children}></PageWrapper>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

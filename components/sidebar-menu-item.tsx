@@ -9,12 +9,8 @@ import classNames from '@/node_modules/classnames/index';
 
 const SideBarMenuItem = ({ item }:{ item: SideNavItem }) => {
     const {toggleCollapse} = useSideBarToggle();
-    const linkStyle = 'flex items-center min-h-[40px] h-full text-[#6e768e] py-2 px-4 hover:text-white rounded-md transition duration-200';
+    const linkStyle = 'flex items-center min-h-[40px] h-full text-sidebar-foreground py-2 px-4 hover:text-sidebar-muted-foreground hover:bg-sidebar-muted rounded-md transition duration-200';
     const ddLinkStyle = linkStyle;
-    const navMenuDropdownItem = 'text-[#6e768e] light:text-[#6e768e] py-2 px-4 light:hover:text-black hover:text-white transition duration-200';
-
-    const inactiveLink = classNames("flex items-center imn-h-[40px] h-full text-[#6e768e] light");
-    const activeLinkStyle= 'rounded-md text-white light:text-black light:bg-[#efefef] bg-[#3a3f48]';
 
     const pathName = usePathname();
 
@@ -23,6 +19,14 @@ const SideBarMenuItem = ({ item }:{ item: SideNavItem }) => {
     const toggleSubMenu= () => {
         setSubMenuOpen(!subMenuOpen);
     }
+
+    const inactiveLink = classNames("flex items-center min-h-[40px] h-full text-sidebar-foreground py-2 px-4 hover:text-sidebar-muted-foreground hover:bg-sidebar-muted rounded-md transition duration-200");
+    const activeLinkStyle= 'active text-sidebar-muted-foreground bg-sidebar-muted';
+
+    const navMenuDropdownItem = 'text-red py-2 px-4 hover:text-sidebar-muted-foreground transition duration-200 rounded-md';
+    const dropDownMenuHeaderLink = classNames(inactiveLink, {
+        ['bg-sidebar-muted rounded-b-none']: subMenuOpen
+    })
 
   return (
     <div>
@@ -39,12 +43,12 @@ const SideBarMenuItem = ({ item }:{ item: SideNavItem }) => {
                         </>
                     }
                 </a>
-                {subMenuOpen && !toggleCollapse && <div className='bg-[#3a3f48] border-1-4'>
+                {subMenuOpen && !toggleCollapse && <div className='bg-sidebar-muted border-1-4'>
                     <div className='grid gap-y-2 px-10 py-3 leading-5'>
                         {
                             item.subMenuItems.map((subItem, index) => {
                                 return (
-                                    <Link key={index} href={subItem.path} className={`${navMenuDropdownItem} ${subItem.path===pathName? 'text-white':''}`} >
+                                    <Link key={index} href={subItem.path} className={`${navMenuDropdownItem} ${subItem.path===pathName? 'text-white':'text-sidebar-foreground'}`} >
                                         <span>{subItem.title}</span>
                                     </Link>
                                 )
