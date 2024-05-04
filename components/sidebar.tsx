@@ -1,3 +1,4 @@
+'use client';
 import Image from "@/node_modules/next/image";
 import { SIDENAV_ITEMS } from "@/SIDEBAR_CONSTANTS";
 import React from "react";

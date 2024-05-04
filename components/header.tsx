@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { BsList } from "react-icons/bs";
 import classNames from "classnames";

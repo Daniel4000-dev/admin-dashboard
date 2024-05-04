@@ -1,4 +1,3 @@
-'use client';
 import Header from "@/components/header";
 import PageWrapper from "@/components/pagewrapper";
 import Sidebar from "@/components/sidebar";
@@ -11,6 +10,10 @@ const karla = Karla({
   subsets: ['latin'],
   variable: "--font-karla"
 });
+export const metadata: Metadata = {
+  title: "DZ admin dashboard",
+  description: "NextJs admin dashboard"
+}
 
 export default function RootLayout({
   children,
@@ -18,19 +21,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={karla.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={karla.className + 'min-h-screen oerflow-hidden'}>
         <ThemeProvider
+        themes={['dark', 'custom', 'light']}
           attribute='class'
-          defaultTheme='system'
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen">
-            <Sidebar></Sidebar>
-            <Header></Header>
-            <PageWrapper children={children}></PageWrapper>
-          </div>
+          <>
+            <Sidebar />
+            <div className='flex flex-col h-full w-full'>
+              <Header />
+              <PageWrapper children={children} />
+            </div>
+          </>
         </ThemeProvider>
       </body>
     </html>
