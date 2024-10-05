@@ -110,7 +110,7 @@ export default function Home() {
                     </p>
                   </CardContent>
                 </Card>
-              </div>
+        </div>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
                 <Card className="col-span-4">
                   <CardHeader>
